@@ -1,66 +1,14 @@
-import { createApp } from 'vue'
+import Vue from 'vue'
 import App from './App.vue'
+import VueComp from '@vue/composition-api'
+Vue.config.productionTip = false
+import router from './routes';
+import store from './store';
 
-// import { createRouter, createWebHashHistory } from 'vue-router'
-// import VueSidebarMenu from '../../src'
-// import Installation from './components/Installation.vue'
-// import BasicUsage from './components/BasicUsage.vue'
-// import Props from './components/Props.vue'
-// import Events from './components/Events.vue'
-// import Styling from './components/Styling.vue'
+Vue.use(VueComp)
 
-// import PrismCode from './components/PrismCode.vue'
-
-// import './fontawesome'
-// import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-import 'bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css'
-// import Vue3EasyDataTable from 'vue3-easy-data-table'
-// import 'vue3-easy-data-table/dist/style.css'
-import router from './router'
-
-// const app = createApp(App);
-// app.component('EasyDataTable', Vue3EasyDataTable);
-
-// const router = createRouter({
-//     history: createWebHashHistory(),
-//     routes: [
-//       {
-//         path: '/',
-//         name: 'Installation',
-//         component: Installation
-//       },
-//       {
-//         path: '/basic-usage',
-//         name: 'BasicUsage',
-//         component: BasicUsage
-//       },
-//       {
-//         path: '/props',
-//         name: 'Props',
-//         component: Props
-//       },
-//       {
-//         path: '/events',
-//         name: 'Events',
-//         component: Events
-//       },
-//       {
-//         path: '/styling',
-//         name: 'Styling',
-//         component: Styling
-//       },
-//       {
-//         path: '/:pathMatch(.*)',
-//         component: Installation
-//       }
-//     ]
-//   })
-
-createApp(App)
-  .use(router)
-  // .use(VueSidebarMenu)
-  // .component('prism-code', PrismCode)
-  // .component('font-awesome-icon', FontAwesomeIcon)
-  .mount('#app')
+new Vue({
+  router,
+  store,
+  render: h => h(App),
+}).$mount('#app')
