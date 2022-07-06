@@ -1,4 +1,4 @@
-# frontend_siaplikasi
+# vue-3-crud
 
 ## Project setup
 ```
